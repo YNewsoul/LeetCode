@@ -5,6 +5,7 @@ class Solution:
     def partitionLabels(self, s: str) -> List[int]:
         # 1.统计每个字符最后出现的位置
         last = {c: i for i, c in enumerate(s)}
+        print(last)
 
         res, start, end = [], 0, 0
         for i in range(len(s)):

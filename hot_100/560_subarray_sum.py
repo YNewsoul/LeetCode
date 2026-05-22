@@ -16,6 +16,19 @@ class Solution:
             prefix_count[prefix_sum] = prefix_count.get(prefix_sum, 0) + 1
         return count
 
+    def subarraySum_(self, nums: List[int], k: int) -> int:
+        # 枚举法(超时)，java不超时
+        count = 0
+        # 枚举子数组的起始位置 start
+        for start in range(len(nums)):
+            sum = 0
+            # 枚举子数组的结束位置 end
+            for end in range(start, -1, -1):
+                sum += nums[end]
+                if sum == k:
+                    count += 1
+        return count
+
 
 if __name__ == "__main__":
     solution = Solution()

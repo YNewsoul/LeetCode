@@ -1,5 +1,6 @@
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
+        # 先排序
         nums.sort()
         n = len(nums)
         res = []
@@ -12,13 +13,20 @@ class Solution:
             if first > 0 and nums[first] == nums[first - 1]:
                 continue
 
+            # 固定第一个数，使用双指针查找剩余两个数
             target = -nums[first]
+            # 第二个数的索引从第一个数的下一个位置开始
+            # 第三个数的索引从最后一个位置开始
             second, third = first + 1, n - 1
 
+            # 当两个指针未相遇时，继续查找
             while second < third:
+                # 计算当前两个数的和
                 cur = nums[second] + nums[third]
+                # 如果当前两个数的和小于目标值，说明需要一个更大的数
                 if cur < target:
                     second += 1
+                # 如果当前两个数的和大于目标值，说明需要一个更小的数
                 elif cur > target:
                     third -= 1
                 else:

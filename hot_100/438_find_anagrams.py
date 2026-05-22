@@ -13,8 +13,36 @@ class Solution:
                 res.append(i)
         return res
 
+    # 2.滑动窗口
+    def findAnagrams_(self, s: str, p: str) -> List[int]:
+        s_len, p_len = len(s), len(p)
 
-# 2.滑动窗口
-# 统计滑动窗口和字符串 p 中每种字母数量的差；并引入变量 differ 来记录当前窗口与字符串 p 中数量不同的字母的个数，并在滑动窗口的过程中维护它。
+        if s_len < p_len:
+            return []
+
+        ans = []
+        # 统计s和p中每个字母的数量
+        s_count = [0] * 26
+        p_count = [0] * 26
+        #
+        for i in range(p_len):
+            s_count[ord(s[i]) - 97] += 1
+            p_count[ord(p[i]) - 97] += 1
+
+        # 如果s和p中每个字母的数量都相同，说明s的前p_len个字符是p的异位词
+        if s_count == p_count:
+            ans.append(0)
+
+        # 滑动窗口，更新s_count中的字母数量
+        for i in range(s_len - p_len):
+            s_count[ord(s[i]) - 97] -= 1
+            s_count[ord(s[i + p_len]) - 97] += 1
+
+            if s_count == p_count:
+                ans.append(i + 1)
+
+        return ans
+
+
 solution = Solution()
 print(solution.findAnagrams("cbaebabacd", "abc"))

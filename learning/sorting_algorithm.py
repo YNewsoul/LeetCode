@@ -64,9 +64,16 @@ class SortingAlgorithm:
         if len(nums) <= 1:
             return nums
         pivot = nums[len(nums) // 2]
-        left = [x for x in nums if x < pivot]
-        middle = [x for x in nums if x == pivot]
-        right = [x for x in nums if x > pivot]
+        left = []
+        right = []
+        middle = []
+        for num in nums:
+            if num < pivot:
+                left.append(num)
+            elif num == pivot:
+                middle.append(num)
+            else:
+                right.append(num)
         return self.quick_sort(left) + middle + self.quick_sort(right)
 
     def merge_sort(self, nums: List[int] = [5, 2, 3, 4, 7, 1]) -> List[int]:
@@ -109,8 +116,8 @@ class SortingAlgorithm:
 
 
 sorting = SortingAlgorithm()
-print(sorting.insertion_sort())
-print(sorting.bubble_sort())
-print(sorting.selection_sort())
+# print(sorting.insertion_sort())
+# print(sorting.bubble_sort())
+# print(sorting.selection_sort())
 print(sorting.quick_sort())
-print(sorting.merge_sort())
+# print(sorting.merge_sort())

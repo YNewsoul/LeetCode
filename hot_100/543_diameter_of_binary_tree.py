@@ -23,6 +23,7 @@ class Solution:
                 return 0
             l = height(node.left)
             r = height(node.right)
+            # 因为有一种可能，是在子树中最大直径，不经过根节点
             self.res = max(self.res, l + r)
             return 1 + max(l, r)
 

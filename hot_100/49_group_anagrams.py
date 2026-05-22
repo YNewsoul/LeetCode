@@ -3,10 +3,11 @@ from typing import List
 
 
 class Solution:
-    # 思路：构建一个存储列表的集合
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # 使用哈希表，将每个字符串排序，作为哈希表的键，将字符串作为值
         map = {}
         for s in strs:
+            # 遍历字符串数组，将每个字符串排序，作为哈希表的键
             key = "".join(sorted(s))
             if key not in map:
                 map[key] = []

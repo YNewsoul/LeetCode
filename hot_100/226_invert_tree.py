@@ -13,8 +13,10 @@ class TreeNode:
 
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        # 递归交换左右子树
         if root is None:
             return None
+        # 交换左右子树就行了
         root.left, root.right = root.right, root.left
         self.invertTree(root.left)
         self.invertTree(root.right)

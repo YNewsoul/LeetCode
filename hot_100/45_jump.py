@@ -11,6 +11,7 @@ class Solution:
         for i in range(n - 1):
             if maxPos >= i:
                 maxPos = max(maxPos, i + nums[i])
+                # 如果当前到达的索引是边界，说明需要跳跃一次
                 if i == end:
                     end = maxPos
                     step += 1

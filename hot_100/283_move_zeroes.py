@@ -20,12 +20,11 @@ class Solution:
             i += 1
 
     def moveZeroes_2(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
+        # 使用双指针，一个指针指向当前非零元素的索引，另一个指针遍历数组
         len_nums = len(nums)
         left = right = 0
         while right < len_nums:
+            # 如果当前数字不是零，交换当前数字和非零元素的索引
             if nums[right] != 0:
                 nums[left], nums[right] = nums[right], nums[left]
                 left += 1

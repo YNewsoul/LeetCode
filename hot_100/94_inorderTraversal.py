@@ -11,8 +11,11 @@ class TreeNode:
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        # 递归遍历
+        # 左子树 -> 根节点 -> 右子树
         if root is None:
             return []
+        # 用 + 连接左子树、根节点、右子树的结果
         return (
             self.inorderTraversal(root.left)
             + [root.val]

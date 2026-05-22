@@ -5,6 +5,7 @@ class Solution:
         for i in range(3, n + 1):
             min_val = i
             for j in range(1, int(i**0.5) + 1):
+                # 遍历所有可能的完全平方数，找到组成 i 的最少完全平方数的数量
                 min_val = min(min_val, res[i - j * j])
             res.append(min_val + 1)
         return res[n]

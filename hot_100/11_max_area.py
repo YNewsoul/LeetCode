@@ -25,10 +25,12 @@ class Solution:
         left = 0
         right = len(height) - 1
         while left < right:
+            # 如果左指针指向的高度较小,则移动左指针
             if height[left] < height[right]:
                 left += 1
             else:
                 right -= 1
+            # 更新最大面积
             max_area = max(max_area, min(height[left], height[right]) * (right - left))
         return max_area
 
