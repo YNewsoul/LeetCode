@@ -1,4 +1,8 @@
 # 3. 无重复字符的最长子串
+
+"思路：哈希集合"
+
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_len = 1 if len(s) != 0 else 0

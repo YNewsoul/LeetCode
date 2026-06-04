@@ -1,5 +1,8 @@
 from typing import List
 
+# 238.除自身以外数组的乘积
+"思路：前缀积"
+
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:

@@ -1,5 +1,8 @@
 from typing import List
 
+# 128.最长连续序列
+"思路：哈希表，集合去重"
+
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:

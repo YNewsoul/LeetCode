@@ -1,6 +1,9 @@
 import collections
 from typing import List
 
+# 49.字母异位词分组
+"思路：哈希表，排序"
+
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:

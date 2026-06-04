@@ -2,6 +2,8 @@
 
 from typing import List
 
+"思路：双指针，交换零和非零元素"
+
 
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:

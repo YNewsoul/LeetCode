@@ -26,3 +26,29 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.min_val
+
+
+class MinStack_:
+    def __init__(self):
+        # 利用辅助栈一直维护当前最小值
+        self.stack = []
+        self.min_value_stack = []
+
+    def push(self, val: int) -> None:
+        self.stack.append(val)
+        if self.min_value_stack:
+            # 栈不为空
+            self.min_value_stack.append(min(val, self.min_value_stack[-1]))
+        else:
+            # 栈为空
+            self.min_value_stack.append(val)
+
+    def pop(self) -> None:
+        self.stack.pop()
+        self.min_value_stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_value_stack[-1]

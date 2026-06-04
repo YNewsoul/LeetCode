@@ -14,3 +14,19 @@ class Solution:
                     return False
             i += 1
         return s == ""
+
+    def isValid_(self, s: str) -> bool:
+        stack = []
+        mapping = {"(": ")", "{": "}", "[": "]"}
+        for s_ in s:
+            if s_ in mapping:
+                stack.append(s_)
+                continue
+            if not stack or mapping[stack[-1]] != s_:
+                return False
+            stack.pop()
+        return not stack
+
+
+s = Solution()
+s.isValid_("()")

@@ -1,3 +1,7 @@
+# 15.三数之和
+"思路：排序，双指针"
+
+
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         # 先排序
